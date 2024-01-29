@@ -1,0 +1,19 @@
+{
+  "name": "senac-dsbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.8.1",
+    "discord.js": "^14.14.1",
+    "prisma": "^5.8.1",
+    "sqlite": "^5.1.1"
+  },
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "deploy": "ts-node ./deploy-commands.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.10"
+  }
+}
