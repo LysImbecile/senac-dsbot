@@ -2,18 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { token, clientId } = require('./src/config.json');
+const { token, clientId } = require('./config.json');
 
-function getCommandFiles(dir: string): string[] {
-    let commandFiles: string[] = [];
-    const files: string[] = fs.readdirSync(dir);
+function getCommandFiles(dir) {
+    let commandFiles= [];
+    const files = fs.readdirSync(dir);
 
     for (const file of files) {
-        const abs: string = path.join(dir, file);
+        const abs = path.join(dir, file);
 
         if (fs.statSync(abs).isDirectory()) {
             commandFiles = commandFiles.concat(getCommandFiles(abs));
-        } else if (file.endsWith('.ts')) {
+        } else if (file.endsWith('.js')) {
             commandFiles.push(abs);
         }
     }

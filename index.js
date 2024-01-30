@@ -1,8 +1,7 @@
 /* These lines of code are importing necessary modules and variables for the Discord bot. */
 const fs = require('fs');
 const path = require('path');
-const { Client, Collection, GatewayIntentBits, Events} = require('discord.js');
-import { CommandInteraction } from 'discord.js';
+const { Client, Collection, GatewayIntentBits, Events } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -13,8 +12,8 @@ client.once(Events.ClientReady, () => {
 
 client.commands = new Collection();
 
-function getCommandFiles(dir : string) {
-    let commandFiles: string[] = [];
+function getCommandFiles(dir) {
+    let commandFiles = [];
     const files = fs.readdirSync(dir);
 
     for (const file of files) {
@@ -22,7 +21,7 @@ function getCommandFiles(dir : string) {
 
         if (fs.statSync(abs).isDirectory()) {
             commandFiles = commandFiles.concat(getCommandFiles(abs));
-        } else if (file.endsWith('.ts')) {
+        } else if (file.endsWith('.js')) {
             commandFiles.push(abs);
         }
     }
@@ -30,7 +29,7 @@ function getCommandFiles(dir : string) {
     return commandFiles;
 }
 
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, './src/commands');
 const commandFiles = getCommandFiles(commandsPath);
 
 for (const file of commandFiles) {
@@ -38,7 +37,7 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
 }
 
-client.on(Events.InteractionCreate, async (interaction : CommandInteraction) => {
+client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isCommand()) return;
 
     const command = client.commands.get(interaction.commandName);

@@ -18,3 +18,9 @@ model Atividades {
   prazo       String
 }
 
+model Calendario {
+  id          Int       @id @default(autoincrement())
+  nome        String
+  descricao   String
+  data        String
+}
