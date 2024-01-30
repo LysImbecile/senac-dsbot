@@ -15,7 +15,7 @@ module.exports = {
         const descricao = interaction.options.getString('descricao')
         const data = interaction.options.getString('data')
         const embed = new EmbedBuilder()
-        .setTitle('Tarefa adicionada!')
+        .setTitle('Tarefa adicionada! 👾')
         .setDescription(`Título da tarefa: ${tarefa}\nDescrição sobre a tarefa: ${descricao}\n data/prazo: ${data}`)
         .setImage('https://i.ibb.co/Q6c6v23/Atividade.png')
         .setTimestamp()

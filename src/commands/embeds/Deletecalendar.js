@@ -11,7 +11,7 @@ module.exports = {
         const prisma = new PrismaClient()
         const id = interaction.options.getNumber('id')
         const embed = new EmbedBuilder()
-        .setTitle('Evento deletado!')
+        .setTitle('Evento deletado! 😊')
         .setDescription('O item que você selecionou foi deletado com sucesso do banco de dados!')
         .setTimestamp()
 

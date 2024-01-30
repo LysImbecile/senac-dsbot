@@ -11,7 +11,7 @@ module.exports = {
         const atividades = await prisma.atividades.findMany()
         const embed = new EmbedBuilder()
         .setTitle('Tarefas em progresso')
-        .setDescription('Aqui estão todas as tarefas!')
+        .setDescription('Aqui estão todas as tarefas! 📖')
         .setTimestamp()
 
         atividades.forEach((atividade) => {

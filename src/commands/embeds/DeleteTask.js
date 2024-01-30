@@ -8,7 +8,7 @@ module.exports = {
     .addStringOption(option => option.setName('tarefa').setDescription('O ID da tarefa!').setRequired(true)),
     async execute(interaction) {
         const embed = new EmbedBuilder()
-        .setTitle('Tarefa deletada!')
+        .setTitle('Tarefa deletada! 👌')
         .setDescription(`Tarefa deletada com sucesso!`)
         .setTimestamp()
 

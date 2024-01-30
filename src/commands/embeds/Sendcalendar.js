@@ -1,4 +1,4 @@
-const { PrismaClient } = require ('@prisma/client')
+const { PrismaClient } = require('@prisma/client')
 const { EmbedBuilder, SlashCommandBuilder } = require('discord.js')
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         const descricao = interaction.options.getString('descricao')
         const data = interaction.options.getString('data')
         const embed = new EmbedBuilder()
-        .setTitle("Item no calendário adicionado!")
+        .setTitle("Item no calendário adicionado! 😀")
         .setDescription("Seu novo item do calendário foi adicionado no banco de dados.")
         .setTimestamp()
         
