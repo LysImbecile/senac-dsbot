@@ -1,5 +1,5 @@
-import { SlashCommandBuilder, EmbedBuilder } from 'discord.js'
-import { PrismaClient } from '@prisma/client'
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { PrismaClient } = require('@prisma/client');
 
 module.exports = {
     data : new SlashCommandBuilder()
