@@ -11,16 +11,19 @@ datasource db {
 }
 
 model Atividades {
+  guildid     BigInt    
   id          Int      @id @default(autoincrement())
-  nome        String
-  descricao   String
-  data        DateTime
-  prazo       String
+  nome        String // Nome da atividade
+  descricao   String // Descrição da atividade
+  data        DateTime // Data de entrega da atividade
+  prazo       String // Prazo para a entrega da atividade
+  link        String  // Link para a atividade no Google Classroom ou outro site 
 }
 
 model Calendario {
+  guildid     BigInt  
   id          Int       @id @default(autoincrement())
-  nome        String
-  descricao   String
-  data        String
+  nome        String // Nome do evento
+  descricao   String // Descrição do evento
+  data        String // Data do evento
 }

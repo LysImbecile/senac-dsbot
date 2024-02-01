@@ -10,6 +10,7 @@ module.exports = {
     .addStringOption(option => option.setName('data').setDescription('Data do evento!').setRequired(true)),
     async execute(interaction) {
         const prisma = new PrismaClient()
+        const guildid = Number(interaction.guild.id)
         const nome = interaction.options.getString('nome')
         const descricao = interaction.options.getString('descricao')
         const data = interaction.options.getString('data')
@@ -19,6 +20,7 @@ module.exports = {
         .setTimestamp()
         
         await prisma.calendario.create({ data : {
+            guildid : guildid,
             nome : nome,
             descricao : descricao,
             data : data
