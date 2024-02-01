@@ -2,4 +2,5 @@ node_modules
 .env
 config.json
 discloud.config
+Deploy-Commands.js
 yarn.lock
